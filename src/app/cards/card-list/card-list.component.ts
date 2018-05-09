@@ -53,6 +53,7 @@ export class CardListComponent implements OnInit, OnDestroy {
       }, 2000);
     });
   }
+
   ngOnInit() {
     if (this.cards === undefined || this.cards.length === 0) {
       // console.log('cards is empty');
