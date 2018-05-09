@@ -10,37 +10,37 @@
 </div>
 
 <div class="col-xs-12 col-sm-4 col-lg-3 card-col" 
-*ngFor='let card of cards'>
+*ngFor='let loan of loans'>
 
   <div class="card-container">
     <div class="card-label">
-      <div class="title">Loan #{{ card.id }}</div>
+      <div class="title">Loan #{{ loans.id }}</div>
     </div>
     <div class="card-img"></div>
     <div class="card-row">
       <div class="card-property">
         <div class="title">{{ 'Status' }}</div>
-        <div class="paragraph">{{ card.status }}</div>
+        <div class="paragraph">{{ loans.status }}</div>
       </div>
       <div class="card-property">
         <div class="title">{{ 'Borrower' }}</div>
-        <div class="paragraph">{{ card.borrower }}</div>
+        <div class="paragraph">{{ loans.borrower }}</div>
       </div>
       <div class="card-property">
         <div class="title">{{ 'Amount' }}</div>
-        <div class="paragraph">{{ card.amount }} ARS</div>
+        <div class="paragraph">{{ loans.amount }} ARS</div>
       </div>
       <div class="card-property">
         <div class="title">{{ 'Durations' }}</div>
-        <div class="paragraph">{{ card.duration }} days</div>
+        <div class="paragraph">{{ loans.duration }} days</div>
       </div>
       <div class="card-property">
         <div class="title">{{ 'Annual interest' }}</div>
-        <div class="paragraph">{{ card.annualInterest }} days</div>
+        <div class="paragraph">{{ loans.annualInterest }} days</div>
       </div>
       <div class="card-property">
         <div class="title">{{ 'Annual Punitory Interest' }}</div>
-        <div class="paragraph">{{ card.annualPunitoryInterest }} days</div>
+        <div class="paragraph">{{ loans.annualPunitoryInterest }} days</div>
       </div>
 
       <ul>
@@ -53,8 +53,7 @@
 
 </div>
 <div class="col-xs-12">
-  <a class="btn btn-primary" (click)='onGet()'>Get Cards</a>
+  <a class="btn btn-primary" (click)='updateLoans()'>Get Loans</a>
   <a class="btn btn-primary" (click)='onCreateContract()'>Create Contract</a>
   <a class="btn btn-primary" (click)='onSaveData()'>Save Cards</a>
-  <app-card-item></app-card-item>
 </div>

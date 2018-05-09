@@ -28,9 +28,8 @@ export class CardListComponent implements OnInit, OnDestroy {
     new Card(7, 'BorrowerX', 'initial', '0xdc...da86', 500, 30, 25, 50),
     new Card(9, 'BorrowerXX', 'initial', '0xdc...da86', 500, 30, 25, 50)
   ];
-  public loans: Loan[] = [
-    // new Loan
-  ];
+  // public loans: Loan[] = [];
+  public loans: Loan[] = [];
   allowLendStatus = true; // this tell me if lending fuction is available
   availableLoans = this.cards.length; // this shows me the number of available contracts
   bestLoan = this.cards[0]; // best loan suggested
@@ -44,33 +43,17 @@ export class CardListComponent implements OnInit, OnDestroy {
     this.cardsService.createContract.next(this.availableLoans);
     console.log('You have created a contract!');
   }
-
-  onGet() {
-    this.cardsService.getCards()
-    .subscribe(
-      (data: any[]) => { console.log('You have get Cards[] successfully ' + data); },
-      (error: string) => { console.log(error); },
-      // () => { console.log('The service has finnished'); }
-    );
+  updateLoans() {
+    this.contractsService.getOpenLoans().then((result: Loan[]) => {
+      this.loans = result;
+      console.log(this.loans);
+      console.log(this.loans[0]);
+      setTimeout(function() {
+        console.log(this.loans);
+      }, 2000);
+    });
   }
   ngOnInit() {
-    this.onGet();
-    // const myObservable = Observable.create((observer: Observer<string>) => {
-    //   this.contractsService.getOpenLoans().then(function(result: Loan[]) {
-    //     console.log(result);
-    //   });
-
-    //   myObservable.subscribe(
-    //     (data: string) => { console.log(data); },
-    //     (error: string) => { console.log(error); },
-    //     (complete: string) => { console.log('The service has finnished'); }
-    //   );
-    // });
-
-    this.contractsService.getOpenLoans().then(function(result: Loan[]) {
-      console.log(result);
-    });
-
     if (this.cards === undefined || this.cards.length === 0) {
       // console.log('cards is empty');
     } else {

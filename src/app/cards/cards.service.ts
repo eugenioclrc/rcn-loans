@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class CardsService {
   createContract = new Subject();
+  apiData: any[] = [];
 
   constructor(private http: Http) { }
 
@@ -15,7 +16,10 @@ export class CardsService {
       .map(
         (response: any) => {
           const data = response.json();
-          console.log(data);
+          // console.log(data);
+          this.apiData.push(data);
+          // console.log(this.apiData);
+          // console.log(this.apiData[0]);
           return data;
         }
       )

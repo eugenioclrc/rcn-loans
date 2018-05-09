@@ -19,7 +19,9 @@ export class CardItemComponent implements OnInit, OnDestroy {
   loan1Created = false;
   loan2Created = false;
   customObsSubscription: Subscription;
-  constructor(private cardsService: CardsService) { }
+  constructor(
+    private cardsService: CardsService
+  ) {}
 
   ngOnInit() {
     this.cardsService.createContract.subscribe(
@@ -30,13 +32,13 @@ export class CardItemComponent implements OnInit, OnDestroy {
           this.loan2Created = true;
         }
       }
-    )
+    );
     const myObservable = Observable.create((observer: Observer<string>) => {
       setTimeout(() => {
-        observer.next('first package');
+        // observer.next('first package');
       }, 2000);
       setTimeout(() => {
-        observer.next('second package');
+        // observer.next('second package');
       }, 3000);
       setTimeout(() => {
         // observer.error('Something went wrong');
@@ -48,7 +50,7 @@ export class CardItemComponent implements OnInit, OnDestroy {
     this.customObsSubscription = myObservable.subscribe(
       (data: string) => { console.log(data); },
       (error: string) => { console.log(error); },
-      (complete: string) => { console.log('The service has finnished'); }
+      // (complete: string) => { console.log('The service has finnished'); }
     );
   }
 

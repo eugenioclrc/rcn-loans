@@ -1,7 +1,9 @@
 import * as Web3 from 'web3';
-
-import { Loan } from '../models/loan.model';
 import { Injectable } from '@angular/core';
+import { Loan } from '../models/loan.model';
+import 'rxjs/Rx';
+import { Subject, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 declare let require: any;
 declare let window: any;
@@ -28,7 +30,6 @@ export class ContractsService {
       if (typeof window.web3 !== 'undefined') {
         // Use Mist/MetaMask's provider
         this._web3 = new Web3(window.web3.currentProvider);
-  
         // if (this._web3.version.network !== '3') {
         //   alert('Please connect to the Ropsten network');
         //}
@@ -51,7 +52,6 @@ export class ContractsService {
                 alert('There was an error fetching your accounts.');
                 return;
               }
-      
               if (accs.length === 0) {
                 alert(
                   'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
