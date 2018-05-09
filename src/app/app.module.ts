@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 // App Component
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './header/header.component';
 import { CardsComponent } from './cards/cards.component';
@@ -36,6 +37,7 @@ import { WindowsHeightDirective } from './directives/windows-height.directive';
   imports: [
     BrowserModule,
     SharedModule,
+    AppRoutingModule,
     MaterialModule,
     HttpModule
   ],
