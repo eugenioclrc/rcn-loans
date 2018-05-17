@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 import { Web3Service } from '../../services/web3.service';
 import { Utils } from '../../utils/utils';
 import { ContractsService } from '../../services/contracts.service';
+import { environment } from './../../../environments/environment';
 
 @Component({
   selector: 'app-dialog-approve-contract',
@@ -32,6 +33,12 @@ export class DialogApproveContractComponent implements OnInit {
   }
   get isEnabled(): boolean {
     return this.isApproved !== undefined;
+  }
+  get rcnLink(): string {
+    return environment.explorer + environment.contracts.rcnToken;
+  }
+  get engineLink(): string {
+    return environment.explorer + environment.contracts.basaltEngine;
   }
   clickCheck() {
     let action;

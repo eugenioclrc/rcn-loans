@@ -10,6 +10,7 @@ export enum Agent {
 export const environment = {
   production: false,
   url: 'http://localhost:4200/',
+  explorer: 'https://ropsten.etherscan.io/address/',
   envName: 'dev',
   contracts: {
     rcnToken: '0x2f45b6fb2f28a73f110400386da31044b2e953d4',
