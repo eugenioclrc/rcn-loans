@@ -39,6 +39,7 @@ import { DecentralandCosignerComponent } from './views/loan-detail/detail-cosign
 import { DecentralandMapComponent } from './views/loan-detail/detail-cosigner/decentraland-cosigner/decentraland-map/decentraland-map.component';
 
 import { DialogApproveContractComponent } from './dialogs/dialog-approve-contract/dialog-approve-contract.component';
+import { AppRoutingModule } from './app-routing.module';
 
 const appRoutes: Routes = [
   { path: 'requests', component: OpenLoansComponent },
