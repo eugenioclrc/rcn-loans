@@ -28,15 +28,17 @@ import { HeaderComponent } from './header/header.component';
 import { ContentWrapperComponent } from './content-wrapper/content-wrapper.component';
 
 import { OpenLoansComponent } from './views/open-loans/open-loans.component';
+import { MyLoansComponent } from './views/my-loans/my-loans.component';
+import { ProfileComponent } from './views/profile/profile.component';
+
 import { LoanDetailComponent } from './views/loan-detail/loan-detail.component';
+import { DetailTableComponent } from './views/loan-detail/detail-table/detail-table.component';
 import { DetailCosignerComponent } from './views/loan-detail/detail-cosigner/detail-cosigner.component';
 import { DetailIdentityComponent } from './views/loan-detail/detail-identity/detail-identity.component';
 import { DecentralandCosignerComponent } from './views/loan-detail/detail-cosigner/decentraland-cosigner/decentraland-cosigner.component';
-import { DialogApproveContractComponent } from './dialogs/dialog-approve-contract/dialog-approve-contract.component';
 import { DecentralandMapComponent } from './views/loan-detail/detail-cosigner/decentraland-cosigner/decentraland-map/decentraland-map.component';
-import { DetailTableComponent } from './views/loan-detail/detail-table/detail-table.component';
-import { MyLoansComponent } from './views/my-loans/my-loans.component';
-import { ProfileComponent } from './views/profile/profile.component';
+
+import { DialogApproveContractComponent } from './dialogs/dialog-approve-contract/dialog-approve-contract.component';
 
 const appRoutes: Routes = [
   { path: 'requests', component: OpenLoansComponent },
