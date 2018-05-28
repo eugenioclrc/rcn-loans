@@ -1,5 +1,5 @@
 <a mat-raised-button 
-  (click)="handleDetail(); openSnackBar()" 
-  class="button button-secondary">
+  (click)=" openSnackBar(); onAnimate()"
+  class="button button-secondary" [@divState]='state'>
     Details
 </a>

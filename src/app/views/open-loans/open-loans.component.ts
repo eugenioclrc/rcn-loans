@@ -1,6 +1,7 @@
-import { Component, OnInit, trigger, style, transition } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpModule, Response } from '@angular/http';
 import { FormControl } from '@angular/forms';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 // App Models
 import { Loan } from './../../models/loan.model';
 // App Services
@@ -12,7 +13,7 @@ import { MaterialModule } from './../../material/material.module';
 import { SharedModule } from './../../shared/shared.module';
 // App Utils
 import { Utils } from './../../utils/utils';
-import { state, animate } from '@angular/animations';
+
 
 @Component({
   selector: 'app-open-loans',

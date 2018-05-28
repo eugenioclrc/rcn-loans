@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div class="title main-h1" (click)='onAnimate()'>Requests</div>
+      <div class="title main-h1">Requests</div>
       <mat-chip-list>
         <mat-chip class="margintop30 marginright15" selected="true" [color]="$primary">{{loans.length}} AVAILABLE</mat-chip>
         <!-- <p *ngIf='loans.length > 3'>There are a lot of Loans for your profile!</p> -->
@@ -9,7 +9,7 @@
     </div>
 
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 card-col" 
-    *ngFor='let loan of loans; let i of index' [@divState]='state' appOpacityOut>
+    *ngFor='let loan of loans; let i of index' [@divState]='state'>
 
       <div class="card-container">
         <app-loan-avatar [loan]=loan [short]=true></app-loan-avatar>
