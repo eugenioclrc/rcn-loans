@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, style, transition } from '@angular/core';
 import { HttpModule, Response } from '@angular/http';
 import { FormControl } from '@angular/forms';
 // App Models
@@ -12,11 +12,12 @@ import { MaterialModule } from './../../material/material.module';
 import { SharedModule } from './../../shared/shared.module';
 // App Utils
 import { Utils } from './../../utils/utils';
+import { state, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-open-loans',
   templateUrl: './open-loans.component.html',
-  styleUrls: ['./open-loans.component.scss']
+  styleUrls: ['./open-loans.component.scss'],
 })
 export class OpenLoansComponent implements OnInit {
   loans = [];

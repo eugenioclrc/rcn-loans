@@ -1,6 +1,7 @@
 // Angular Core
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,6 +38,8 @@ import { DecentralandMapComponent } from './views/loan-detail/detail-cosigner/de
 import { DetailTableComponent } from './views/loan-detail/detail-table/detail-table.component';
 import { MyLoansComponent } from './views/my-loans/my-loans.component';
 import { ProfileComponent } from './views/profile/profile.component';
+import { OpacityOutDirective } from './directives/opacity-out.directive';
+
 
 const appRoutes: Routes = [
   { path: 'requests', component: OpenLoansComponent },
@@ -65,10 +68,12 @@ const appRoutes: Routes = [
     DecentralandMapComponent,
     DetailTableComponent,
     MyLoansComponent,
-    ProfileComponent
+    ProfileComponent,
+    OpacityOutDirective
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     MaterialModule,
     HttpModule,
