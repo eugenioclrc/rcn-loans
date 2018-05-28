@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { trigger, state, style, animate, transition, query, animateChild} from '@angular/animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Loan } from './../../models/loan.model';
 

@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { HttpModule, Response } from '@angular/http';
 import { FormControl } from '@angular/forms';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 // App Models
 import { Loan } from './../../models/loan.model';
 // App Services

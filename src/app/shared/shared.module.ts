@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { BlockiesModule } from 'angular-blockies';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // App Component
 import { MaterialModule } from '../material/material.module';
 import { LendButtonComponent } from './lend-button/lend-button.component';
@@ -35,7 +37,8 @@ import { WithdrawButtonComponent } from './withdraw-button/withdraw-button.compo
     BrowserModule,
     HttpModule,
     MaterialModule,
-    BlockiesModule
+    BlockiesModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     LendButtonComponent,
@@ -56,7 +59,7 @@ import { WithdrawButtonComponent } from './withdraw-button/withdraw-button.compo
     IconAvatarComponent,
     ButtonGroupComponent,
     GobackButtonComponent,
-    WithdrawButtonComponent
+    WithdrawButtonComponent,
   ],
   exports: [
     LendButtonComponent,
