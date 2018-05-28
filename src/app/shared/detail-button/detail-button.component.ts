@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, state, style, animate, transition, query, animateChild} from '@angular/animations';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -26,10 +26,15 @@ import {MatSnackBar} from '@angular/material';
     ])
   ]
 })
-export class DetailButtonComponent {
+export class DetailButtonComponent implements OnInit {
   state = 'inactive';
   constructor(private router: Router, public snackBar: MatSnackBar) { }
   @Input() loan: Loan;
+  @Input() master: any;
+
+  ngOnInit() {
+    console.log(this.master);
+  }
 
   onAnimate() {
     this.state === 'inactive' ? this.state = 'active' : this.state = 'inactive';

@@ -21,6 +21,7 @@ import { Utils } from './../../utils/utils';
 })
 export class OpenLoansComponent implements OnInit {
   loans = [];
+  master = ['Master' , 'Master 2'];
   bestLoan = this.loans[0]; // be dst loan suggested
   pendingLend = [];
   constructor(
@@ -35,6 +36,7 @@ export class OpenLoansComponent implements OnInit {
   }
   ngOnInit() {
     this.loadLoans();
+    // console.log(this.master);
   }
   private formatInterest(interest: Number): string {
     return Number(interest.toFixed(2)).toString();
