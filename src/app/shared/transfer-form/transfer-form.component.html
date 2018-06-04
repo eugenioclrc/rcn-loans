@@ -15,4 +15,12 @@
       <button mat-raised-button class="button button-secondary" [mat-dialog-close]='true'>{{ 'Cancel' }}</button>
     </div>
   </form>
+
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+    
 </div>

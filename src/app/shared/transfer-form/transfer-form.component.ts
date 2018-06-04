@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import {
   FormsModule,
   FormGroup,
@@ -6,10 +8,8 @@ import {
   FormControl,
   Validators,
   NgForm,
+  ReactiveFormsModule,
 } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 // App Component
 import { MaterialModule } from './../../material/material.module';
 import { SharedModule } from './../../shared/shared.module';
@@ -23,6 +23,15 @@ import { Web3Service } from '../../services/web3.service';
 export class TransferFormComponent implements OnInit {
   @Output() submitTransfer = new EventEmitter<any>();
   invalidAddress = false;
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
+  }
+
   constructor(
     private web3Service: Web3Service
   ) { }
