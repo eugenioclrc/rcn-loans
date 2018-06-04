@@ -23,15 +23,6 @@ import { Web3Service } from '../../services/web3.service';
 export class TransferFormComponent implements OnInit {
   @Output() submitTransfer = new EventEmitter<any>();
   invalidAddress = false;
-
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
-  }
-
   constructor(
     private web3Service: Web3Service
   ) { }
