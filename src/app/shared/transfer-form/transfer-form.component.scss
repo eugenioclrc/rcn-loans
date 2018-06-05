@@ -1,4 +1,11 @@
+mat-form-field{
+    height: 65px;
+}
 .error {
     color: #dc4437;
-    font-size: 1em;
+}
+@media (min-width: 768px){
+    mat-form-field{
+        height: 80px;
+    }   
 }
