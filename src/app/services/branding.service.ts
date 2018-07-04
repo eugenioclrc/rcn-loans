@@ -15,7 +15,7 @@ export class BrandingService {
     decentraland_mortgage: new Brand(
       'Mortgage creator',
       '#E59400',
-      'https://avatars1.githubusercontent.com/u/12685795?s=400&v=4',
+      '../../assets/decentraland-logo.png',
       '',
       'Decentraland',
       undefined
@@ -23,7 +23,7 @@ export class BrandingService {
     ripio: new Brand(
       'Ripio',
       '#009BDE',
-      './assets/ripio.png',
+      '../../assets/ripio.png',
       '',
       'Ripio',
       undefined
