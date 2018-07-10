@@ -18,6 +18,7 @@ import { CivicService } from './services/civic.service';
 import { SidebarService } from './services/sidebar.service';
 import { TitleService } from './services/title.service';
 import { AvailableLoansService } from './services/available-loans.service';
+import { ScriptService } from './services/script.service';
 
 // App Directives
 import { FadeToggleDirective } from './directives/fade-toggle.directive';
@@ -124,6 +125,7 @@ const appRoutes: Routes = [
     SidebarService,
     TitleService,
     AvailableLoansService,
+    ScriptService,
   ],
   bootstrap: [AppComponent]
 })

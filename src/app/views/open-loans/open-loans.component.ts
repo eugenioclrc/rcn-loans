@@ -11,6 +11,7 @@ import { Utils } from './../../utils/utils';
 import { TxService, Tx } from './../../tx.service';
 import { ContractsService } from './../../services/contracts.service';
 import { BrandingService } from './../../services/branding.service';
+import { ScriptService } from './../../services/script.service';
 import { CivicService } from '../../services/civic.service';
 import { Web3Service } from '../../services/web3.service';
 import { AvailableLoansService } from '../../services/available-loans.service';
@@ -30,6 +31,7 @@ export class OpenLoansComponent implements OnInit{
   constructor(
     private contractsService: ContractsService,
     private txService: TxService,
+    private scriptService: ScriptService,
     private brandingService: BrandingService,
     private spinner: NgxSpinnerService,
     private civicService: CivicService,
@@ -69,11 +71,49 @@ export class OpenLoansComponent implements OnInit{
     });
   }
 
+  loadStyles() {
+    const dynamicStyles = ['https://hosted-sip.civic.com/css/civic-modal.min.css'];
+    for (let i = 0; i < dynamicStyles.length; i++) {
+      const node = document.createElement('link');
+      node.type = 'text/css';
+      node.rel = 'stylesheet';
+      node.href = dynamicStyles[i];
+      document.getElementsByTagName('head')[0].appendChild(node);
+      console.log(dynamicStyles + ' has been added');
+    }
+  }
+
+  loadScripts() {
+    const dynamicScripts = ['https://hosted-sip.civic.com/js/civic.sip.min.js'];
+    console.log(dynamicScripts);
+    for (let i = 0; i < dynamicScripts.length; i++) {
+      const node = document.createElement('script');
+      node.src = dynamicScripts[i];
+      node.type = 'text/javascript';
+      node.async = false;
+      node.charset = 'utf-8';
+      document.getElementsByTagName('head')[0].appendChild(node);
+      console.log(dynamicScripts + ' has been added');
+    }
+  }
+
+  scriptsLoader(){
+    this.scriptService.load('civic').then(data => {
+      console.log('script loaded ', data);
+    }).catch(error => console.log(error));
+  }
+
   ngOnInit() {
     this.spinner.show(); // Initialize spinner
     this.loadLoans();
-
+    
     // Available Loans service
     this.availableLoansService.currentAvailable.subscribe(available => this.available = available);
+    
+    
+    this.loadStyles();
+    // this.loadScripts();
+    
+    this.scriptsLoader();
   }
 }
