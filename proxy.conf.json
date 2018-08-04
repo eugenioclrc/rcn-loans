@@ -1,9 +1,0 @@
-{
-  "/proxy_decentraland/*": {
-    "target": "https://api.decentraland.zone",
-    "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug",
-    "pathRewrite": {"^/proxy_decentraland" : ""}
-  }
-}

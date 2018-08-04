@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,400i,500,600,700,800,900");
+@import '_thimble-overrides.scss';
+@import '_mixins.scss';
+@import '_thimble-core.scss';
+
+body {
+  background-color: #000000;
+}
+
+.container {
+  max-width: 1170px;
+}
