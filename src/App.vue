@@ -5,7 +5,7 @@
         <img src="./assets/isologotypo.svg" style="height: 45px;">
       </div>
       <div>
-        <router-link to="/requests">Requests</router-link>
+        <router-link to="/">Requests</router-link>
         <router-link to="/activity">Activity</router-link>
         <router-link to="/login">Login</router-link>
       </div>
